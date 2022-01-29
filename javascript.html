@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Javascript Session</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <p>Variables</p>
+    
+    <div id="div-sum">SUM</div>
+    <br>
+
+    <!-- Internal JS -->
+    <script>
+        //Variable Declaration
+        var num1=1, num2=5;
+        var sum = num1 + num2;
+        var fullname = "Jok Garcia";
+
+        //JS Type of Outputs
+        console.log("The Sum is (Console Output) : " + sum);
+        document.getElementById("div-sum").innerHTML = "Hello! " + fullname + " The Sum is (Html Output) : " + sum;
+    </script>
+
+    <p>Conditional Statements (IF ELSE)</p>
+    
+    <div id="div-if-else">IF ELSE</div>
+    <br>
+
+    <script>
+        var num1="10", num2=10;
+
+        if(num1 > num2){
+            //Action
+            document.getElementById("div-if-else").innerHTML = num1 + " is greater than " + num2;
+        }
+        else if(num1 < num2) {
+            document.getElementById("div-if-else").innerHTML = num1 + " is lesser than " + num2;
+        }
+        else if(num1 === num2) {
+            document.getElementById("div-if-else").innerHTML = num1 + " and " + num2 + " are equal ";
+        }
+        else{
+            document.getElementById("div-if-else").innerHTML = "Invalid Input";
+        }
+
+    </script>
+
+    <p>Conditional Statements (SWITCH CASE)</p>
+
+    
+
+    <select id="txt-gen">
+        <option value="0">Please Select Gen</option>
+        <option value="1">Gen Z</option>
+        <option value="2">Millenials</option>
+        <option value="3">Gen X</option>
+    </select>
+
+    <button onclick="GetGeneration();">Check Your Generation</button>
+    <div id="div-switch">GENERATION</div> 
+    <br>
+
+    <script>
+        function GetGeneration(){
+        var selected = document.getElementById("txt-gen");
+        gen = selected.options[selected.selectedIndex].value; // String Data Type
+
+        console.log("selected value : " + gen);
+
+        switch(gen)
+        {
+            case "1":{
+                document.getElementById("div-switch").innerHTML = "1997 - 2012";
+                break;
+            }
+            case "2":{
+                    ("div-switch").innerHTML = "1981 - 1996";
+                break;
+            }
+            case "3":{
+                document.getElementById("div-switch").innerHTML = "1964 - 1980";
+                break;
+            }
+            default:{
+                document.getElementById("div-switch").innerHTML = "Cannot Find Generation";
+                break;
+            }
+        }
+
+        }
+
+    </script>
+
+    <p>Javascript Objects</p>
+    
+    <div id="div-student">Student</div>
+    <br>
+    <div id="div-prof">Prof</div>
+    <button onclick="FullNames();">Show Full Names</button>
+    
+    <script>
+        function FullNames(){
+        
+        var student = Object();
+        student.firstname = "Jok";
+        student.lastname = "Garcia";
+        student.year = 2;
+        student.sem = 1;
+
+        
+        var prof = Object();
+        prof.firstname = "James";
+        prof.lastname = "Cruz";
+        prof.salary = 20000;
+
+        var work = Object();
+        work.position = "Developer";
+        work.company = "XYZ Company";
+        
+
+        var subject = Array("Math","Programming",1);
+
+        var sfullname = student.firstname + " " + student.lastname;
+
+        var pfullname = prof.firstname + " " + prof.lastname;
+
+        document.getElementById("div-student").innerHTML = "Hi! " + sfullname;
+
+        document.getElementById("div-prof").innerHTML = "Hi! Sir " + pfullname;
+
+        }
+
+    </script>
+
+</body>
+</html>
